@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentina Narváez Gallego - Portafolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-coral: #FF6B35;
+            --primary-cream: #FFF8F3;
+            --accent-teal: #2DB8A3;
+            --accent-sage: #A8D5BA;
+            --neutral-dark: #3F3F3F;
+            --neutral-gray: #F5F5F5;
+            --text-dark: #2C2C2C;
+            --text-light: #6B6B6B;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* HEADER & HERO */
+        header {
+            background: linear-gradient(135deg, var(--primary-cream) 0%, rgba(255, 107, 53, 0.05) 100%);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid rgba(255, 107, 53, 0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 10px;
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.15);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .header-text h1 {
+            font-size: 3em;
+            color: var(--primary-coral);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header-text p {
+            font-size: 1.3em;
+            color: var(--accent-teal);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            background-color: var(--primary-coral);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5em;
+            color: var(--primary-coral);
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-teal);
+            margin: 15px auto 0;
+        }
+
+        /* BIOGRAFÍA */
+        .biography {
+            background-color: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+            line-height: 1.8;
+            text-align: justify;
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        /* HOBBIES */
+        .hobbies-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .hobby-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.2);
+        }
+
+        .hobby-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .hobby-content {
+            padding: 30px;
+        }
+
+        .hobby-content h3 {
+            font-size: 1.8em;
+            color: var(--primary-coral);
+            margin-bottom: 15px;
+        }
+
+        .hobby-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1em;
+        }
+
+        /* PRODUCTOS */
+     /* PRODUCTOS Y LOGOS */
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            min-height: 300px;
+        }
+
+        .product-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.15);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: auto;
+            max-height: 250px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+
+        /* FOOTER */
+        footer {
+            background-color: var(--text-dark);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-text {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-coral);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-teal);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 107, 53, 0.3);
+            padding-top: 20px;
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header-text h1 {
+                font-size: 2em;
+            }
+
+            .header-text p {
+                font-size: 1.1em;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+            section {
+                padding: 50px 15px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            .biography {
+                padding: 30px;
+                font-size: 1em;
+            }
+
+            .hobbies-container {
+                grid-template-columns: 1fr;
+            }
+
+            .products-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                padding: 8px 15px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 15px;
+            }
+
+            .header-text h1 {
+                font-size: 1.5em;
+            }
+
+            .header-text p {
+                font-size: 1em;
+            }
+
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+
+            section {
+                padding: 40px 15px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+
+            .biography {
+                padding: 20px;
+                text-align: left;
+                font-size: 0.95em;
+            }
+
+            .hobby-content {
+                padding: 20px;
+            }
+
+            .hobby-image {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="header-content">
+            <div class="profile-pic">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Nq2rSvBytV2P4FgoflljIFSirK0YI9.png" alt="Logo de Valentina">
+            </div>
+            <div class="header-text">
+                <h1>Valentina Narváez Gallego</h1>
+                <p>Ingeniera en Sistemas y Artista</p>
+            </div>
+            <nav class="nav-links">
+                <a href="#biografia">Biografía</a>
+                <a href="#hobbies">Hobbies</a>
+                <a href="#productos">Productos</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BIOGRAFÍA -->
+    <section id="biografia">
+        <h2>Biografía</h2>
+        <div class="biography">
+            <p>Mi nombre es Valentina Narváez, tengo 21 años y soy estudiante de Ingeniería de Sistemas. Desde pequeña descubrí mi conexión con el arte y la creatividad, por eso disfruto pintar en lienzo, ilustrar y explorar el mundo visual desde todas sus perspectivas. Me apasiona la colorimetría, la armonía de los tonos y cómo cada detalle puede combinar para transmitir una idea o una emoción. Soy una persona curiosa y con gusto por los temas profundos. Me encanta leer sobre el Holocausto y otros sucesos históricos que marcaron al mundo, no solo por su relevancia, sino por la forma en que transforman nuestra manera de pensar y comprender la vida. También me considero gamer de corazón; disfruto pasar horas frente al computador explorando nuevos mundos, historias y desafíos en videojuegos. Cada una de estas pasiones forma parte de mi identidad: una mezcla entre tecnología, arte, historia y creatividad. Mi camino profesional y personal está guiado por la búsqueda constante de aprender, crear y encontrar belleza en el orden, el color y los detalles.</p>
+        </div>
+    </section>
+
+    <!-- HOBBIES -->
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <div class="hobbies-container">
+            <div class="hobby-card">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-P70q9TfpFVdYPwV2qTnNwaukzjJSYv.png" alt="Pintar" class="hobby-image">
+                <div class="hobby-content">
+                    <h3>Pintar</h3>
+                    <p>Pintar es mi forma de convertir mis ideas en algo visible. Cada lienzo se vuelve un espacio donde puedo explorar colores, formas y emociones. Me encanta mezclar tonos y experimentar hasta lograr que todo combine; para mí, pintar no es solo un pasatiempo, es una forma de expresar lo que las palabras no alcanzan a decir.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-I6Do53V5esPllVqJGwsOYUGUqq8bYC.png" alt="Leer" class="hobby-image">
+                <div class="hobby-content">
+                    <h3>Leer</h3>
+                    <p>Leer es viajar sin moverme del lugar. Me atraen los libros que abren puertas a otras épocas, historias profundas y momentos que marcaron al mundo. Cada página me enseña algo nuevo y me permite ver la realidad desde otras miradas. La lectura es mi escape, mi forma de aprender y de conectar con historias que dejan huella.</p>
+                </div>
+            </div>
+
+            <div class="hobby-card">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-BPyY8xh1Pt4Tx8jgrdpDcVBU1ldaCz.png" alt="Jugar Videojuegos" class="hobby-image">
+                <div class="hobby-content">
+                    <h3>Jugar Videojuegos</h3>
+                    <p>Jugar videojuegos es entrar a mundos distintos donde puedo explorar, crear estrategias y vivir aventuras que no existen en la vida real. Me gusta ese equilibrio entre desafío y entretenimiento, donde cada misión, cada nivel y cada historia me sumergen por completo. Es una experiencia que combina tecnología, imaginación y diversión.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS Y LOGOS -->
+    <section id="productos">
+        <h2>Productos y Logos</h2>
+        <div class="products-container">
+            <div class="product-item">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Nq2rSvBytV2P4FgoflljIFSirK0YI9.png" alt="Logo de Valentina">
+            </div>
+            <div class="product-item">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-LQQINt2eW4ZAUlWeoy1t0Ziq6AVklh.png" alt="Productos y Merchandising">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>Conecta conmigo en redes sociales</p>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com" title="Instagram">📸</a>
+                <a href="https://linkedin.com" title="LinkedIn">💼</a>
+                <a href="https://twitter.com" title="Twitter">𝕏</a>
+                <a href="https://github.com" title="GitHub">🔗</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Valentina Narváez Gallego. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
